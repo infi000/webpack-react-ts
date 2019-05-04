@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "es6"
+        ],
+        "types": [
+            "reflect-metadata","node"
+        ],
+        "module": "commonjs",
+        "sourceMap": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}

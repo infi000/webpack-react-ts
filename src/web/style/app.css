@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+
+.App {
+    text-align: center;
+}
+#root{
+    height: 100%;
+}
+
+.main-layout{
+    height: 100%;
+}
