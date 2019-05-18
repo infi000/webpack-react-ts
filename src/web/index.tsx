@@ -35,8 +35,6 @@ function Main(params:type) {
 }
 
 ReactDOM.render(
-
     <Main />,
-
     document.getElementById("root")
 );

@@ -63,6 +63,7 @@
     "inversify": "^5.0.1",
     "inversify-koa-utils": "^1.0.0",
     "koa-static": "^5.0.0",
+    "koa2-connect-history-api-fallback": "^0.1.2",
     "log4js": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

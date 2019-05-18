@@ -19,7 +19,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 //  css打包配置项,编译文件和输出路径
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
     filename: "src/[name].[hash:5].css",//输出文件
-    chunkFilename: "src/[name].[hash:5].css"//流文件，虚拟的 dev时候的
+    chunkFilename: "static/style/[name].[hash:5].css"//流文件，虚拟的 dev时候的
 });
 
 //向外部暴露一个打包配置对象，webpack基于node构建的，所以支持所有node api和语法
@@ -28,11 +28,11 @@ let webpackConfig = {
         app:"./src/web/index.tsx",
     },
     output: {
-        path: resolve("dist"), // string
+        path: resolve("dist/assets"), // string
         publicPath: '/', // root Dir
         sourceMapFilename: '[name].map',
-        chunkFilename: 'static/js/[name].[chunkhash:5].js',
-        filename: 'static/js/[name].[hash:5].js'
+        chunkFilename: 'static/script/[name].[chunkhash:5].js',
+        filename: 'static/script/[name].[hash:5].js'
     },
     plugins: [
         htmlWebpackPlugin,

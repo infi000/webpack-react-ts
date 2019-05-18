@@ -1,5 +1,7 @@
 import { InversifyKoaServer } from "inversify-koa-utils";
 import { Container, buildProviderModule } from "./ioc/ioc";
+import historyApiFallback from 'koa2-connect-history-api-fallback';
+
 import "reflect-metadata";
 import "./ioc/loader";
 import errorHandler from "./util/errorHandler";
@@ -8,7 +10,7 @@ import * as log4js from "log4js";
 // import co from "co";
 // import * as render from 'koa-swig';
 import * as serve from "koa-static";
-import config from "./config";
+import config from "./config/index";
 
 //日志 逻辑和业务错误 HTTP日志
 log4js.configure({
@@ -46,8 +48,11 @@ server.setConfig(app => {
   //   ext: 'html',
   //   writeBody: false
   // }));
-  app.use(serve(config.staticDir));
 
+    app.use(historyApiFallback({ 
+      whiteList: ['/api']
+  }));
+  app.use(serve(config.staticDir));
 }).setErrorConfig(app => {
   //容错
   errorHandler.error(app, logger);

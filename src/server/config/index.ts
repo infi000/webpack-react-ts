@@ -4,8 +4,6 @@ let config = {
     "viewDir": join(__dirname, "..", "views"),
     "staticDir": join(__dirname, "..", "assets"),
 };
-
-
 if (process.env.NODE_ENV == "development") {
     const localConfig = {
         baseUrl:"http://127.0.0.1:8080/yideng_book/web/index.php?r=",

@@ -23,11 +23,22 @@ export class IndexService implements IIndex{
     ];
     public getUser(id:string) : Model.User{
         let result:Model.User;
-
-
-        console.log("得到响应库" , this.safeRequest.fetch);
         result = this.userStorage[id];
         return result;
+    };
+    /**
+     * test
+     */
+    public test() {
+        let res;
+        const url ="http://127.0.0.1:8081/data.json";
+        const arg = {};
+        // const cb=(d)=>{
+        //   return   res=d;
+        // }
+        res = this.safeRequest.fetch(url,arg)
+
+        return res
     }
 
 }
